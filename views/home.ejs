@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") -%>
+
+
+    <h1>Home</h1>
+    <p><%= para1 %></p>
+  <%  posts.forEach(function(let)
+    {%>
+     <h1><%= let.title %></h1>
+    <p><%= let.content.substring(0,200) +" ..." %><a href="/posts/<%=let._id%>">Read more</a></p>
+    <%});%>
+
+
+<form class="newBlog" action="/" method="post">
+  <button   class="btn btn-info" type="submit" name="newBlog">Compose New Blog</button>
+</form>
+
+
+<%- include("partials/footer.ejs") -%>
